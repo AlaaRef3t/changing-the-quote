@@ -26,25 +26,48 @@ var myQuotes = [
         writer: "― Dr. Seuss",
         quote: "“You know you're in love when you can't fall asleep because reality is finally better than your dreams.”"
     },
+    {
+        writer: "― الفنان القدير حكيم",
+        quote: "بكره الايام تبين مين قاسي ومين حنين وساعتها هتعرفوني لما الايام تبييين لما الااياااام تبببييين"
+    },
+    {
+        writer: "― Bill Keane",
+        quote: "“Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.”"
+    },
+    {
+        writer: "― سقراط عم الناس",
+        quote: "ان الحياة التي لم ندرسها لا تستحق ان نعيشها"
+    },
+    {
+        writer: "وليام شكسبير",
+        quote: "ان اكون او لا اكون هذا هو السؤال"
+    },
+    {
+        writer: "هيراقليطس ",
+        quote: "الشئ الوحيد الثابت فالحياه هو التغيير"
+    },
+    {
+        writer: "رالف والدو إيمرسون ",
+        quote: "ليس هدف الحياة أن تكون سعيدًا، بل أن تكون مفيدًا، شريفًا، رحيمًا، وأن تُحدث فرقًا في حياتك، وأن تعيش حياةً طيبة"
+    },
 ]
 
 
-var index = -1;
+var lastQuote;
 
 function funcToGenerate() {
 
-    var randomQuote = Math.floor(Math.random() * myQuotes.length);
-    while (index === randomQuote) {
-        randomQuote = Math.floor(Math.random() * myQuotes.length);
-
-    }
-
-
-    getQuote.innerHTML = myQuotes[randomQuote].quote;
-    getWriter.innerHTML = myQuotes[randomQuote].writer;
+    do {
+      index = Math.floor(Math.random() * myQuotes.length);
+    } 
+    while (index === lastQuote)
 
 
-    index = randomQuote;
+    getQuote.innerHTML = myQuotes[index].quote;
+    getWriter.innerHTML = myQuotes[index].writer;
+
+
+    lastQuote = index ;
 
 
 }
